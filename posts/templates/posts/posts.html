@@ -1,11 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Posts</title>
-</head>
-<body>
-    <h1>Posts Lists</h1>
-</body>
-</html>
+{% extends "base.html" %}
+{%block title%} Posts {%endblock%}
+{%block content%}
+<section>
+    <h1>Articles</h1>
+    {%for post in posts%}
+        <h1>{{post.title}}</h1>
+        <p>{{post.date}}</p>
+        <p>{{post.body}}</p>
+    {%endfor%}
+</section>
+{%endblock%}
